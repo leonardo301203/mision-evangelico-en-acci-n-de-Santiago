@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Misión Evangélico en Acción de Santiago</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; background: #f4f4f4; text-align: center; }
+    .logo { max-width: 200px; margin-top: 20px; }
+    .container { max-width: 600px; margin: auto; padding: 20px; background: white; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    input[type="password"] { padding: 10px; margin-top: 20px; width: 80%; }
+    button { padding: 10px 20px; margin-top: 10px; background: navy; color: white; border: none; border-radius: 5px; cursor: pointer; }
+    .hidden { display: none; }
+  </style>
+</head>
+<body>
+  <div class="container" id="login-section">
+    <h2>Bienvenido</h2>
+    <p>Por favor, introduce la contraseña para acceder</p>
+    <input type="password" id="password" placeholder="Contraseña">
+    <br>
+    <button onclick="checkPassword()">Entrar</button>
+  </div>
+
+  <div class="container hidden" id="main-content">
+    <img src="Facebook_creation_24684536481146182.jpeg" alt="Logo" class="logo">
+    <h1>Misión Evangélico en Acción de Santiago</h1>
+    <p>\"Así alumbre vuestra luz delante de los hombres, para que vean vuestras buenas obras y glorifiquen a vuestro Padre que está en los cielos.\" (Mateo 5:16)</p>
+    <h3>Apoya nuestra misión con una donación:</h3>
+    <form action="https://buy.stripe.com/test_4gw8zAgEv7r7dHGcMN" method="GET">
+      <button>Donar con tarjeta</button>
+    </form>
+  </div>
+
+  <script>
+    function checkPassword() {
+      const pass = document.getElementById("password").value;
+      if (pass === "246810eloi") {
+        document.getElementById("login-section").classList.add("hidden");
+        document.getElementById("main-content").classList.remove("hidden");
+      } else {
+        alert("Contraseña incorrecta.");
+      }
+    }
+  </script>
+</body>
+</html>
